@@ -1,0 +1,7 @@
+
+<div class="row">
+  <div class="col px-5">
+    <input #term type="text" (keyup)="buscar(term.value)" class="form-control mt-5 animated fadeIn" placeholder="Search artist">
+  </div>
+</div>
+<app-cards [items] = "artists"></app-cards>

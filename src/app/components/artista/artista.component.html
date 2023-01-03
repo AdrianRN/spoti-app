@@ -1,0 +1,55 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="container mt-2">
+  <div class="row animated fadeIn">
+    <div *ngIf="!loading" class="w-100 d-flex align-items-center justify-content-between">
+
+      <div class="col-4 mt-4">
+        <img class="round artist-image" style="width: 14rem;" [src]="imgArt | noimage">
+      </div>
+
+      <div class="col-4">
+        <h3 class="title">{{nameArt}}</h3>
+        <p>
+          <a target="_blank" class="titleH" [href]="urlArt">
+            Go to artist page
+          </a>
+        </p>
+      </div>
+
+      <div class="col-4 text-right d-flex align-items-end justify-content-end w-100 h-100">
+        <button routerLink="/home" class="btn-back btn btn-outline-danger">
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin: 15px;">
+  <h3 class="mt-5 font-weight-bold">Popular</h3>
+  <div class="row resp">
+    <div style="width: 100%;">
+      <table class="col-12" style="border: #000 !important;">
+
+        <tbody>
+          <tr *ngFor="let song of topTracks">
+            <!-- <td>
+              <img [src]="song.album.images | noimage" class="img-thumb"  alt="">
+            </td> -->
+            <td style="padding-bottom: 20px;">
+              <iframe class="iframe-spoty" [src]="song.id | domseguro" width="300" height="80" frameborder="0" allowtransparency="true"
+                allow="encrypted-media"></iframe>
+            </td>
+            <td class="respTd" style="padding-left: 25px; padding-bottom: 20px;">{{song.name}}</td>
+            <td class="respTd" style="padding-left: 25px; padding-bottom: 20px;">{{song.album.name}}</td>
+            <td class="duration" style="padding-left: 40px; max-width: 84px; padding-bottom: 20px;">{{song.duration_ms |
+              duration}}</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>

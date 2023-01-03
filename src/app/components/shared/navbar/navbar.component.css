@@ -1,0 +1,40 @@
+
+nav { 
+    margin-top: 10px;
+  }
+
+  .spoti-logo {
+    margin-top: 15px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding-left: 55px;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  nav .titleH:hover {
+    color: #1db954;
+  }
+
+  @media (max-width: 768px) { 
+    nav a {
+      padding-left: 0;
+    }
+   }
+
+   @media (min-width: 768px) { 
+    .spacer {
+      padding-left: 60%;
+    }
+   }
+
+   @media (max-width: 768px) { 
+    .links-list {
+      padding-left: 5px;
+    }
+   }
